@@ -2,6 +2,10 @@ import * as React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "../Landing/Landing";
 import Navbar from "../Navbar/Navbar";
+import Movies from "../Movies/Movies";
+import Customers from "../Customers/Customers";
+import Reports from "../Reports/Reports";
+import NotFound from "../NotFound/NotFound";
 
 function App() {
   return (
@@ -11,10 +15,10 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/movies" element={<Landing />} />
-            <Route path="/customers" element={<Landing />} />
-            <Route path="/reports" element={<Landing />} />
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>
