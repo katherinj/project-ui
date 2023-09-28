@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
@@ -12,11 +13,13 @@ export default function Navbar() {
 }
 
 export function Logo() {
-  //  const logoUrl = "../../media/balance-scale.png";
+  const logoUrl = "https://www.flixster.com/logo/logo_Mobile.svg";
 
   return (
     <div className="logo">
-      <Link to="/"></Link>
+      <Link to="/">
+        <img src={logoUrl} className="icon" />
+      </Link>
     </div>
   );
 }
