@@ -6,8 +6,17 @@ import Movies from "../Movies/Movies";
 import Customers from "../Customers/Customers";
 import Reports from "../Reports/Reports";
 import NotFound from "../NotFound/NotFound";
+import { MovieContextProvider } from "../../contexts/movie";
 
-function App() {
+export default function AppContainer() {
+  return (
+    <MovieContextProvider>
+      <App />
+    </MovieContextProvider>
+  );
+}
+
+export function App() {
   return (
     <div className="app">
       <React.Fragment>
@@ -25,5 +34,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

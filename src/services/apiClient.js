@@ -22,11 +22,30 @@ class ApiClient {
       return { data: null, error: message || String(error) };
     }
   }
-  async getMsg() {
+
+  // health checkpoint
+  async fetchMsg() {
     return await this.request({
       endpoint: `/`,
       method: `GET`,
     });
+  }
+
+  // ----------------------- movie requests -----------------------------
+
+  // returns all movies
+  async fetchAllMovies() {
+    return await this.request({ endpoint: `movie`, method: `GET` });
+  }
+
+  // returns top 5 movies
+  async fetchTopFiveMovies() {
+    return await this.request({ endpoint: `movie/top5`, method: `GET` });
+  }
+
+  // GET /movie/:movieId
+  async fetchMovieById(movieId) {
+    return await this.request({ endpoint: `movie/${movieId}`, method: `GET` });
   }
 }
 
